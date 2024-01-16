@@ -1,15 +1,14 @@
 ﻿using Northwind.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Northwind.DataAccess.Concrete
+namespace Northwind.DataAccess.Abstract
 {
-	public class NorthwindContext : DbContext
+	public interface IProductDal : IEntityRepository<Product>
 	{
-		public DbSet<Product> Products { get; set; }
+		
 	}
 }

@@ -95,6 +95,10 @@
       <Project>{3EB05838-72EC-41D3-9362-FB1C0D98B807}</Project>
       <Name>Northwind.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Northwind.DataAccess\Northwind.DataAccess.csproj">
+      <Project>{229CD008-4193-4565-A6F9-925BEDF87A93}</Project>
+      <Name>Northwind.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Northwind.Entities\Northwind.Entities.csproj">
       <Project>{67F554ED-B089-4DA2-904C-9A2B6D7A999D}</Project>
       <Name>Northwind.Entities</Name>

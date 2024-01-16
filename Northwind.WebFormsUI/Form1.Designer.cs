@@ -30,28 +30,99 @@ namespace Northwind.WebFormsUI
 		private void InitializeComponent()
 		{
 			this.dgwProduct = new System.Windows.Forms.DataGridView();
+			this.gbxCategory = new System.Windows.Forms.GroupBox();
+			this.gbxProductName = new System.Windows.Forms.GroupBox();
+			this.lblCategory = new System.Windows.Forms.Label();
+			this.cbxCategory = new System.Windows.Forms.ComboBox();
+			this.lblProductName = new System.Windows.Forms.Label();
+			this.tbxProductName = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).BeginInit();
+			this.gbxCategory.SuspendLayout();
+			this.gbxProductName.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dgwProduct
 			// 
 			this.dgwProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgwProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgwProduct.Location = new System.Drawing.Point(22, 74);
+			this.dgwProduct.Location = new System.Drawing.Point(12, 188);
 			this.dgwProduct.Name = "dgwProduct";
-			this.dgwProduct.Size = new System.Drawing.Size(766, 159);
+			this.dgwProduct.Size = new System.Drawing.Size(776, 208);
 			this.dgwProduct.TabIndex = 0;
+			// 
+			// gbxCategory
+			// 
+			this.gbxCategory.Controls.Add(this.cbxCategory);
+			this.gbxCategory.Controls.Add(this.lblCategory);
+			this.gbxCategory.Location = new System.Drawing.Point(12, 12);
+			this.gbxCategory.Name = "gbxCategory";
+			this.gbxCategory.Size = new System.Drawing.Size(764, 74);
+			this.gbxCategory.TabIndex = 1;
+			this.gbxCategory.TabStop = false;
+			this.gbxCategory.Text = "Kategoriye Göre Ara";
+			// 
+			// gbxProductName
+			// 
+			this.gbxProductName.Controls.Add(this.tbxProductName);
+			this.gbxProductName.Controls.Add(this.lblProductName);
+			this.gbxProductName.Location = new System.Drawing.Point(12, 92);
+			this.gbxProductName.Name = "gbxProductName";
+			this.gbxProductName.Size = new System.Drawing.Size(751, 72);
+			this.gbxProductName.TabIndex = 2;
+			this.gbxProductName.TabStop = false;
+			this.gbxProductName.Text = "Ürün Adına Göre Ara";
+			// 
+			// lblCategory
+			// 
+			this.lblCategory.AutoSize = true;
+			this.lblCategory.Location = new System.Drawing.Point(6, 27);
+			this.lblCategory.Name = "lblCategory";
+			this.lblCategory.Size = new System.Drawing.Size(52, 13);
+			this.lblCategory.TabIndex = 0;
+			this.lblCategory.Text = "Kategori :";
+			// 
+			// cbxCategory
+			// 
+			this.cbxCategory.FormattingEnabled = true;
+			this.cbxCategory.Location = new System.Drawing.Point(72, 27);
+			this.cbxCategory.Name = "cbxCategory";
+			this.cbxCategory.Size = new System.Drawing.Size(176, 21);
+			this.cbxCategory.TabIndex = 1;
+			this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+			// 
+			// lblProductName
+			// 
+			this.lblProductName.AutoSize = true;
+			this.lblProductName.Location = new System.Drawing.Point(9, 37);
+			this.lblProductName.Name = "lblProductName";
+			this.lblProductName.Size = new System.Drawing.Size(54, 13);
+			this.lblProductName.TabIndex = 0;
+			this.lblProductName.Text = "Ürün Adı :";
+			// 
+			// tbxProductName
+			// 
+			this.tbxProductName.Location = new System.Drawing.Point(72, 34);
+			this.tbxProductName.Name = "tbxProductName";
+			this.tbxProductName.Size = new System.Drawing.Size(176, 20);
+			this.tbxProductName.TabIndex = 1;
+			this.tbxProductName.TextChanged += new System.EventHandler(this.tbxProductName_TextChanged);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(800, 489);
+			this.Controls.Add(this.gbxProductName);
+			this.Controls.Add(this.gbxCategory);
 			this.Controls.Add(this.dgwProduct);
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "Ürünler - İşlem sayfam";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).EndInit();
+			this.gbxCategory.ResumeLayout(false);
+			this.gbxCategory.PerformLayout();
+			this.gbxProductName.ResumeLayout(false);
+			this.gbxProductName.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -59,6 +130,12 @@ namespace Northwind.WebFormsUI
 		#endregion
 
 		private System.Windows.Forms.DataGridView dgwProduct;
+		private System.Windows.Forms.GroupBox gbxCategory;
+		private System.Windows.Forms.ComboBox cbxCategory;
+		private System.Windows.Forms.Label lblCategory;
+		private System.Windows.Forms.GroupBox gbxProductName;
+		private System.Windows.Forms.TextBox tbxProductName;
+		private System.Windows.Forms.Label lblProductName;
 	}
 }
 
