@@ -80,31 +80,47 @@ namespace Northwind.WebFormsUI
 
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
-			_productService.Add(new Product
+			try
 			{
-				CategoryId = Convert.ToInt32(cbxCategory2.SelectedValue),
-				ProductName = tbxProductName2.Text,
-				QuantityPerUnit = tbxQuantityPerUnit.Text,
-				UnitPrice = Convert.ToDecimal(tbxPrice.Text),
-				UnitsInStock = Convert.ToInt16(tbxStock.Text)
-			});
-			MessageBox.Show("Ürün Eklendi.");
-			LoadProducts();
+				_productService.Add(new Product
+				{
+					CategoryId = Convert.ToInt32(cbxCategory2.SelectedValue),
+					ProductName = tbxProductName2.Text,
+					QuantityPerUnit = tbxQuantityPerUnit.Text,
+					UnitPrice = Convert.ToDecimal(tbxPrice.Text),
+					UnitsInStock = Convert.ToInt16(tbxStock.Text)
+				});
+				MessageBox.Show("Ürün Eklendi.");
+				LoadProducts();
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(exception.Message);
+			}
+			
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			_productService.Update(new Product
+			try
 			{
-				ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
-				ProductName = tbxProductNameUpdate.Text,
-				CategoryId = Convert.ToInt32(cbxCategoryIdUpdate.SelectedValue),
-				UnitsInStock = Convert.ToInt16(tbxQuantityPerUnitUpdate.Text),
-				QuantityPerUnit = tbxQuantityPerUnit.Text,
-				UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text)
-			});
-			MessageBox.Show("Ürün Güncellendi.");
-			LoadProducts();
+				_productService.Update(new Product
+				{
+					ProductId = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
+					ProductName = tbxProductNameUpdate.Text,
+					CategoryId = Convert.ToInt32(cbxCategoryIdUpdate.SelectedValue),
+					UnitsInStock = Convert.ToInt16(tbxQuantityPerUnitUpdate.Text),
+					QuantityPerUnit = tbxQuantityPerUnitUpdate.Text,
+					UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text)
+				});
+				MessageBox.Show("Ürün Güncellendi.");
+				LoadProducts();
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(exception.Message);
+			}
+
 		}
 
 		private void dgwProduct_CellClick(object sender, DataGridViewCellEventArgs e)
